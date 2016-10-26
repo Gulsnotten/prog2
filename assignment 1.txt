@@ -1,0 +1,33 @@
+roguelike
+	'	<-- floor
+	"	<-- lit floor
+	~	<-- plate
+	£	<-- door	"this door leads down a staircase. walk through? Y/N"
+
+mobfactory
+	CreateEnemy
+	(CreatePerson)
+	CreateCritter
+	CreateBoss
+
+mob
+	char icon
+	(lootfactory)
+
+(lootfactory)
+
+mapfactory
+	CreateMap
+
+
+pushbackautomata CONTROLS
+		game
+			inventory
+
+mobState
+	roaming
+		attacking
+			fleeing
+
+Component
+	component_YN class
