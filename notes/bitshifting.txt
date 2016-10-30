@@ -1,0 +1,30 @@
+short a = 0xFFFF;
+short b = 0xAAAA;
+
+short result = (a & b);		<--compares bit for bit, 1&1 = 1, 1&0 = 0, 0&0 = 0
+//result will be 1010 1010 1010 1010
+
+
+
+(a | b)		<-- 1|1 = 1, 1|0 = 1, 0|0 = 0
+
+
+(a ^ b)		<-- 1^1 = 0, 1^0 = 1, 0^0 = 0
+
+
+
+
+kolla upp flags
+
+
+#define SDL_DONG	0x00000001
+#define SDL_DONG_BONG	0x00000010
+
+
+
+
+
+bitshifting
+
+short result = a << 1;
+short result = a >> 4;

@@ -1,0 +1,18 @@
+std::map<std::string,int> map;
+
+map.insert(std::pair<std::string,int>("hey", 10));
+map.insert(std::pair<std::string,int>("dude", 50));
+
+|	|	|
+V	V	V
+
+#0 --> "dude" , 50
+#1 --> "hey" , 10
+
+
+
+
+
+std::function<[RETURN TYPE]>
+std::function<void()>
+std::function<std::string()>

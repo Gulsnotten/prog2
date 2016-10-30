@@ -1,0 +1,23 @@
+COMPONENT SYSTEM
+
+
+class Entity{	<--- with a vector of components
+				<--- Apparently more important than inheritance
+	public:
+		virtual void Update();
+		void AddComponent(IComponent* p_xConponent);	<-- add components of the fly
+		void RemoveComponent();
+}
+
+
+class IComponent{
+	public: virtual void Update();
+}
+
+
+
+
+INHERITANCE COMPONENT SYSTEM
+class Player : public Entity, public IDrawable, public ICollidable{
+	
+}

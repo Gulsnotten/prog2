@@ -1,0 +1,5 @@
+minst 2 patterns, good naming conventions
+
+factory
+state machine
+observer + subject

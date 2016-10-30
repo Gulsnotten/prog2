@@ -1,0 +1,54 @@
+switch (plr_state){
+	case standing: standing(); break;
+	case crouching: crouching(); break;
+	case jumping: jumping(); break;
+}
+
+
+
+
+class StateMachine			<-- just works, keep it pure
+					<-- generic, works for every entity (player, AI, menus)
+private:
+	State* m_pxCurrentState
+	bool ChangeState(State* p_xState)
+public:
+	bool Update()
+
+class State				<-- handle input & everything
+	virtual State* NextState()
+	virtual bool Update()
+
+
+
+CONNCURRENT STATE MACHINE
+class Player{
+public:
+	bool Update();
+private:
+	PlayerState* m_pxLowerBodyMovement = nullptr;
+	PlayerState* m_pxUpperBodyMovement = nullptr;
+	PlayerState* m_pxHeadMovement = nullptr;
+	PlayerState* m_pxWeaponMovement = nullptr;
+	bool m_bJumping; //use get/set not public variables
+}
+
+class PlayerState{
+public: virtual void Update();
+private: Player* m_xOwner;
+}
+
+
+
+HIERARCHAL STATE MACHINE	 <--(READ MORE)
+
+
+PUSHDOWN AUTOMATA
+class Player
+public:
+	bool Update();
+	void ChangeState(PlayerState* p_xState);
+	void PushState(PlayerState* px_state){
+	/* changes state but stores the previous
+	state so it can return when its done*/
+	};

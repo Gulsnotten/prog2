@@ -1,0 +1,105 @@
+BASICS
+class Product{
+	
+}
+class Factory{
+	static Product* Create(){
+		return new Product();
+	}
+}
+
+
+EXAMPLE FACTORY
+class Car{
+	std::string name;
+}
+class CarFactory{
+	static Product* CreateFord(){
+		return new Car("Ford");
+	}
+	static Product* CreateVolvo(){
+		return new Car("Volvo");
+	}
+}
+
+
+ABSTRACT FACTORY
+AbstractFactory{
+	+CreateCarnivore()
+	+CreateHerbivore()
+}
+
+AfricaFactory : AbstractFactory {
+	+CreateCarnivore() // lion
+	+CreateHerbivore() // zebra
+}
+
+AsiaFactory : AbstractFactory {
+	+CreateCarnivore() // puma
+	+CreateHerbivore() // cow
+}
+
+
+RENDERFACTORY
+RenderFactory{
+	IRenderer* CreateRenderer(){
+		if (type=="OpenGL")
+			return new IRenderer_OpenGL();
+		if (type=="Mesa")
+			return new IRenderer_Mesa();
+	}
+}
+
+
+
+
+class IEnemy{...};
+class Goomba : public IEnemy{...};
+class KoopaTroopa : Public IEnemy{...};
+classIEnemyFactory{...};
+class KoopaTroopaFactory{
+	IEnemy* CreateEnemy(const std::string type){
+		if (type == "green"){ return new KoopaTroopa(); }
+		if (type == "red"){
+			KoopaTroopa* enemy = new KoopaTroopa();
+			enemy->GetState("Pacing")->SetBehavior("platform_end", "turn")
+			return enemy;
+		} return nullptr;
+	}
+}
+
+
+
+
+REGISTERFACTORY
+// Ability to register a specific renderer for creation
+// Logic to store registrated renderer creators
+// std::map, function to store key value pairs
+// key value airs of std::string and std::function
+
+class IRenderer{
+	public:
+		? static/virtual ? std::shared_ptr<IRenderer> Create() = 0;
+}
+
+class RenderFactory{
+	static std::shared_ptr<IRenderer> CreateRenderer(const std::string type){
+		//Return a derived IRenderer class object
+	}
+	// ^^^
+}
+
+
+
+you can make constructors private so you prevent people making an object without pre-made functions in the factory
+
+
+
+
+FLYWEIGHT
+When you create the first object from a flyweight factory its rescources are created. All the following objects of the same type created by the factory will use the same rescource
+
+
+
+
+VISITOR PATTERN

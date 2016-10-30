@@ -1,0 +1,53 @@
+OBSERVER
+
+class Observer{
+public:
+	virtual ~Observer();
+	virtual void Notify(Subject* subject) = 0; <-- true virtual
+protected:
+	Observer();
+private:
+	Observer(const Observer& ref);
+	Observer& operator = (const Observer& ref);
+}
+
+class Subject{
+public:
+	virtual ~Subject();
+	bool AddObserver(Observer* observer);
+	bool RemoveObserver(Observer* ovserver);
+	bool NotifyObservers();
+}
+
+class PressurePlate : public Subject{	<--
+	
+}
+
+class Enemy : public Observer{ <-- listener
+	
+}
+
+
+
+
+
+SERVICE LOCATOR -> NOTIFICATION CENTER
+
+class NotificationCenter // Service Locator, Singleton, Similar
+{
+	AddObserver(const std::string& name,
+				std::function<coid(void)> callback) <-- void back in the observer
+	RemoveObserver
+	PostNotification(message, Subject)
+
+	std::map<std::string, std::list<Observer>> m_axObservers; <--???
+
+
+	// Random class can send a notification to the notification center
+	// Observers add themselves for a notification "pressureplate_5"
+}
+
+
+
+
+TEMPLATE NOTIFICATION CENTER

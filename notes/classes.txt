@@ -1,0 +1,95 @@
+506656
+
+
+
+class Foo : protected Goo <-- gör så att högsta access-nivån blir protected i Goo
+
+
+deconstructors are in reverse order, base classes take priority
+
+
+NEVER USE FRIEND FUNCTIONS
+
+class MyMass{
+	friend class FriendClass;
+private:
+	float myPrivateVar = 0.f;
+}
+class FriendClass{
+public:
+	MyClass myFriendObject;
+	void SetFriendData(float value){
+		myFriendObject.myPrivateVar = value;
+	}
+}
+
+
+Base* baseInstance = new Base();
+
+Derived* ptr_1 = static_cast<Derived*>(baseInstance); //if error -> Memory Corruption
+Derived* ptr_2 = dynamic_cast<Derived*>(baseInstance); //if error -> Compiler Error
+
+
+
+class A{
+	protected:
+		int myInt;
+}
+class B{
+	protected:
+		int myInt;
+}
+class C : public A, public B {	//<--multiple inheritance. can be treated as both A and B
+	public:
+		void function_A(){
+			A::myInt = 10;
+		}
+		void function_B(){
+			B::myInt = 10;
+		}
+}
+
+
+
+
+create a virtual deconstructor in the base class so derived classes can override it
+
+
+
+
+virtual void Update() = 0;	//<-- pure virtual function, has to be overridden
+
+
+class Bar : public Foo {
+  void printStuff() {
+    Foo::printStuff(); // calls base class' function
+  }
+};
+
+
+
+class templates?
+
+template <class T> class AnyType{
+	
+}
+AnyType<int> int_type ....
+
+
+template <class A, class B, class C>
+class MyClass{
+	private:
+	A myA; B myB; C myC;
+public:
+	MyClass(A a, B b, C c) { myA = a; myB = b, myC = c; };
+	void SomeFunction() {myA * myB * myC; };
+}
+MyClass<int, char*, std::string> intObject(100, new char[3], "oh lord");
+intObject.someFunction();
+
+
+
+template <typename T>
+T max(T a, T b){
+	return a > b ? a : b;
+}
