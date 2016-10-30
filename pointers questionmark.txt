@@ -1,0 +1,22 @@
+I don't understand pointers.
+
+Why and when should I use pointers?
+
+A bunch of pointers in a FSM doesn't look like RAII. Would you delete pointers outside of the destructor? :(
+
+Or are we supposed to wrap pointers to States in special State wrappers and use that?
+	benefits: the big data is on the heap ("free store" which has a bigger space) instead of the stack
+
+
+
+http://www.learncpp.com/cpp-tutorial/79-the-stack-and-the-heap/
+
+The heap has advantages and disadvantages:
+- Allocating memory on the heap is comparatively slow.
+- Allocated memory stays allocated until it is specifically deallocated (beware memory leaks) or the application ends (at which point the OS should clean it up).
+- Dynamically allocated memory must be accessed through a pointer. Dereferencing a pointer is slower than accessing a variable directly.
++ Because the heap is a big pool of memory, large arrays, structures, or classes can be allocated here.
+
+
+
+If variables/data is stored in States, having them be pointers could actually be a big deal. But states don't typically contain data? If anything it would be the FSM or a struct/ptr being passed around by the States. If the FSM was a pointer, would it's members be allocated on the heap too?

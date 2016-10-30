@@ -4,7 +4,7 @@
 int main() {
 	try {
 		PetGame game;
-		game.run();
+		game.Run();
 	}
 	catch (const std::runtime_error& error) {
 		std::cerr << error.what() << std::endl;

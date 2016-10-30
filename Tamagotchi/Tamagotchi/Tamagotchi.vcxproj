@@ -142,11 +142,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Pet.cpp" />
+    <ClCompile Include="Pet_FSM.cpp" />
     <ClCompile Include="PetGame.cpp" />
+    <ClCompile Include="PetState.cpp" />
+    <ClCompile Include="PushDownAutomata.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="IState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Pet.h" />
+    <ClInclude Include="Pet_FSM.h" />
     <ClInclude Include="PetGame.h" />
+    <ClInclude Include="PetState.h" />
+    <ClInclude Include="PushDownAutomata.h" />
+    <ClInclude Include="IState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

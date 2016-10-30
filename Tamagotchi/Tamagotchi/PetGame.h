@@ -5,6 +5,6 @@ public:
 	PetGame();
 	~PetGame();
 
-	void run();
+	void Run();
 };
 

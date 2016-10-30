@@ -1,0 +1,29 @@
+StateMachine --> Pet (Observer)
+	Sleep
+	Idle
+	Eating
+	Sick (won't eat)
+
+SunCycle (Subject)
+		
+
+NotificationCenter
+	Dawn (gryning)
+	Dusk
+
+
+
+
+Pet_FSM : public PDA
+
+PetState
+	Pet*
+
+Pet
+	hunger
+	belly
+	sickness
+
+	PrintStatus() -> "Pet is hungry"  @
+	PrintAction()?
+	Feed()

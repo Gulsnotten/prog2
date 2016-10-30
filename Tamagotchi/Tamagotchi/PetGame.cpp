@@ -12,6 +12,6 @@ PetGame::~PetGame()
 }
 
 
-void PetGame::run() {
+void PetGame::Run() {
 
 }

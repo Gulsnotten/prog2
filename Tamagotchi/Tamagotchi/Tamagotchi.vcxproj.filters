@@ -21,9 +21,39 @@
     <ClCompile Include="PetGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PushDownAutomata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PetState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pet_FSM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PetGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PushDownAutomata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PetState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pet_FSM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
