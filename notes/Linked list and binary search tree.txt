@@ -1,0 +1,53 @@
+LINKED LIST
+
+* are usually templated
+* utilize recursive functions in their operations
+* each node holds a VALUE and a REFERENCE to the next node
+* the first node is referred to as "head" and the last node "tail"
+* the root node has a reference to both the head and the tail
+* when searching through Nodes, you look at the NEXT node value. You cannot "delete this;"
+
+? regular arrays have their memory in one big chunk
+
++ dynamic data structure
++ dynamically allocated, allocate & deallocate in runtime
+
+- cannot access nodes using []
+
+
+class Node{
+public:
+	Node();
+	~Node();
+	void push_front();
+	void push_back();
+	void pop_front();
+	void pop_back();
+	void clear();
+	T at(const int p_index);
+	int find_value(T);
+	void insert(const int p_index);
+	void remove(const int p_index);
+	T value
+	Node* m_next;
+}
+
+
+DOUBLY LINKED LIST
+
+* each node contains a reference to the both previous and the next node
+
+
+CIRCULAR LINKED
+
+* the tail has a reference to the first node
+* both a regular linked list or a doubly linked list can be circular
+* Jerry is really unsure what the actual benefits of a circular linked list is...
+
+
+
+
+
+THE ASSIGNMENT:
+
+download the .h file. you can add functions to the .h file if you want

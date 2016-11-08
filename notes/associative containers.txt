@@ -1,0 +1,47 @@
+ASSOCIATIVE CONTAINERS
+
+sets are used as BST
+
+SET and MAP
+#include <set>
+#include <map>
+
+// only keys
+std::set<int> mySet; // if you try to insert something that has the same key as an existing item, it discards it
+std::multiset<int> myMultiSet; // can have several items with the same key
+
+// keys and associated value, so when you access an item you will get the value instead of the key
+std::map<int, int> // holds unique key
+std::multimap<int, int>
+
+* set and map are implemented as balanced binary search trees (BST)
+* uncolored ends where the nodes end
+* red black tree always have nullpointers to the next nodes. 1 extra bit that represents true/false or red/black..?
+
+
+std::unordered_set
+std::unordered_multiset
+std::unordered_map
+std::unordered_multimap
+
+myMap[i] = i; // the key i has the value i
+				// this works because the keys are unique
+
+myMultiMap <-- cannot access with scope since several items can have the same value
+
+
+myMultiMap.find(value) -> returns an iterator that points to the item
+auto it = myMultiMap.find(100 /*value*/);
+
+
+
+
+HASHTABLE
+
+* they're stored in BUCKETS
+* useful for storing a large amount of data in an efficient manner
+
+stores key value pairs
+it's an assymetrical multidimensional
+
+a hash function decides where to store stuff

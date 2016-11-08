@@ -1,0 +1,30 @@
+BINARY SEARCH TREE (BST)
+
+* not a sequential line of data, its a tree
+* each node holds 2 references. up and down (left right?)
+* the end nodes are referred to as "leaves"
+* traversed from the root to the leaves, taking either a left or a right down the tree
+	searching for a number: if the number is bigger than the current node, go right. if the number is smaller, go left
+* utilize templates and recursive functions
+
+each node holds a value and 2 reference. one which is less than the current value and one which is bigger.
+
+when the search comes to a point where it can't continue left or right it creates a reference there.
+
+
+
+REMOVE ONE CHILD
+
+removing a node with a child.. switch the value with it's child and then remove it (not the references, that's more complicated).
+
+REMOVE TWO CHILDREN
+
+if both children have no children, switch values with one of the children (doesn't matter which) and the delete.
+
+switch values with the biggest leaf of the left side or the smallest leaf on the right side, then delete.
+if you always take from one side it can be unbalanced... alternate sides with a bool or something.
+
+
+
+traversal_in_order -> from smallest to biggest
+traversal_pre_order -> from biggest to smallest

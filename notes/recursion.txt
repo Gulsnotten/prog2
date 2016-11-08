@@ -1,0 +1,36 @@
+RECURSION & OPERATOR OVERLOADING
+
+RECURSION
+
+void MyFunction(int repeat){
+		// owned by the function, will not be set in a recursive call
+		// count will only be set to 0 the first time
+	static int count = 0;	<--- 
+
+	count++;
+	if (count == repeat)
+		return();
+	MyFunction(repeat);
+
+	count = 0;
+}
+
+
+FACTORIAL EXAMPLE
+
+// n! = 1 * 2 * 3 * [...] * n
+int factorialRecursive(const unsigned int &p_value){
+	if (p_value == 0)
+		return 1;
+	else
+		return p_value * factorialIterative(p_value - 1);	
+}
+
+
+recursive Sudoku solver..!
+
+you can see the order of the recursive functions in the "Call Stack"
+
+
+
+mandelbrot documentary

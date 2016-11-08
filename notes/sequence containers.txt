@@ -1,0 +1,90 @@
+SEQUENCE CONTAINERS
+
+REASON FOR USE: A LOT MORE OPTIMIZED THAN OUR LINKED LISTS FOR EXAMPLE
+speed of different arrays depend on what we are storing and inserting
+
+
+* linear data structures
+* you can access any member by index (using [] for example)
+
+static array -> std::array
+	what differentiates std::array from other sequence containers is that you have to define the size when declaring
+
+	x > arr.size()
+
+	arr[x] // will crash
+	arr.at(x) // will throw an exception
+
+int staticArray[10] 				// allocated on the stack at COMPILE time	<--???
+									// cannot change size
+int* dynamicArray = new int[10];	// allocated on the heap at RUN time	<--???
+									// "newing" 10 new integers
+delete dynamicArray // only deletes the first pointer, not the 10 ints
+delete[] dynamicArray // deletes everything
+
+int* myArray = new int[5];
+// [4 byte][...][][][]
+// memory adress + index*datatype_size forward in memory
+myArray[0] = 100;
+myArray[1] = 200;
+int a = *myArray;
+int b = (*myArray++);
+
+
+
+when you pop_back() an array you don't release the data.
+
+* arrays allocate memory in blocks, so the capacity is larger than the size. when the size reaches the capacity it reallocates.
+* pop_back will not reallocate the memory. if you have an array of 4MB and pop_back() all items, it still takes 4MB
+* shrink_to_fit() will reallocate so it takes less space
+
+you can use reserve() to reserve space for the capacity
+
+
+
+DEQUE
+
+* assign chunks of memory
+* are not stored continously in memory
+* double ended qeue
+* pointers, chunks ???
+
+std::deque<int> myContainer;
+
+myContainer.push_back();
+myContainer.pop_back();
+myContainer.push_front();
+myContainer.pop_front();
+
+
+adaptor patterns of deque
+adaptor: only lets you handle something as you want. an alphabet adapted as consonants only lets you access the consonants in the alphabet.
+
+	STACK
+std::stack<int> myContainer
+myContianer.push(); // always add elements at the end
+myContianer.pop(); // always removes elements at the end
+
+	QUEUE
+	// FIFO, first in first out
+std::queue<int> myContainer
+myContianer.push(); // always add elements at the end
+myContianer.pop(); // always removes elements at the front
+
+	PRIORITY QUEUE
+std::priority_queue<int> prioQueue;
+starvation: a priority entity can take priority over other things and the add more things to do before the current thing is over, effectively "starving" the non-priority plebs
+
+	LIST
+std::list // a linked list
+std::list<int> myContainer;
+* are not stored as a chunk in memory, but are sequential
+myContainer.push_back(1);
+myContainer.pop_back(1);
+myContainer.insert(myVector.begin(), 1);
+myContainer.erased(myVector.begin(), 1
+
+
+
+std::list<int> doublyLinkedList // takes less time to traverse to the end since it can traverse from the back
+std::forward_list<int> singlyLinkedList

@@ -1,0 +1,23 @@
+OPERATOR OVERLOADING
+
+vector2 a, b, c;
+c = a + b;
+
+vector2 operator + (vector2 a, vector2 b){
+	vector2 tmp;
+	tmp.x = a.x + b.x;
+	tmp.y = a.y + b.y;
+	return tmp;
+}
+
+vector2 operator + (vector2 a){
+	vector2 tmp;
+	tmp.x = a.x + this->x;
+	tmp.y = a.y + this->y;
+	return tmp;
+}
+
+
+vector2 operator + (Vector2 a){
+	return Vector2(a.x + this->x, a.y + this->y);
+}
