@@ -9,15 +9,10 @@
 class PetState : public PDA_State
 {
 protected:
-	std::unique_ptr<PetState> nextState;
 	std::shared_ptr<PetData> _petDataPtr = nullptr;
 
 	int GetChoice(const std::vector<std::string> choices) const;
 	int getInputInt(int min, int max) const;
-
-	virtual void Feed();
-	virtual void Wash();
-	virtual void Play();
 public:
 	PetState();
 	~PetState();

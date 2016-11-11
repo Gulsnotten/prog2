@@ -1,14 +1,7 @@
 #include <iostream>
 #include "PetGame.h"
 
-#include <string>
-
 int main() {
-	int min = 0;
-	int max = 5;
-	
-
-
 	try {
 		PetGame game;
 		game.Run();

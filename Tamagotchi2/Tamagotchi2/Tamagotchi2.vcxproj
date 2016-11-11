@@ -146,19 +146,27 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PDA_State.cpp" />
     <ClCompile Include="PetData.cpp" />
+    <ClCompile Include="PetFactory.cpp" />
     <ClCompile Include="PetGame.cpp" />
     <ClCompile Include="PetState.cpp" />
+    <ClCompile Include="PetState_Dead.cpp" />
+    <ClCompile Include="PetState_Default.cpp" />
     <ClCompile Include="PetState_Idle.cpp" />
-    <ClCompile Include="Pet_PDA.cpp" />
+    <ClCompile Include="PetState_Sick.cpp" />
+    <ClCompile Include="StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IState.h" />
     <ClInclude Include="PDA_State.h" />
     <ClInclude Include="PetData.h" />
+    <ClInclude Include="PetFactory.h" />
     <ClInclude Include="PetGame.h" />
     <ClInclude Include="PetState.h" />
+    <ClInclude Include="PetState_Dead.h" />
+    <ClInclude Include="PetState_Default.h" />
     <ClInclude Include="PetState_Idle.h" />
-    <ClInclude Include="Pet_PDA.h" />
+    <ClInclude Include="PetState_Sick.h" />
+    <ClInclude Include="StateMachine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

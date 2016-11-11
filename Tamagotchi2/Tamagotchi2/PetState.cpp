@@ -14,6 +14,7 @@ PetState::~PetState()
 
 int PetState::GetChoice(const std::vector<std::string> choices) const {
 	int index = 0;
+	std::cout << "(write the number of your choice)\n";
 	for (auto c : choices) {
 		std::cout << ++index << " : " << c << "\n";
 	}
@@ -36,16 +37,6 @@ int PetState::getInputInt(int min, int max) const {
 	return result;
 }
 
-void Feed(){
-
-}
-void Wash() {
-
-}
-void Play() {
-
-}
-
 void PetState::Enter(std::shared_ptr<PetData> _ptr) {
 	_petDataPtr = _ptr;
 }
@@ -56,5 +47,5 @@ SwitchType PetState::GetSwitchType() const {
 
 
 PetState* PetState::NextState() const {
-	return nextState.get();
+	return new PetState();
 }

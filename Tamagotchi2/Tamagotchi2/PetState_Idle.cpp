@@ -1,7 +1,6 @@
 #include "PetState_Idle.h"
 
 
-
 PetState_Idle::PetState_Idle()
 {
 }
@@ -11,36 +10,43 @@ PetState_Idle::~PetState_Idle()
 {
 }
 
-static const std::vector<std::string> CHOICES = { "Play", "Feed", "Wash" };
-static const enum Action {play, feed, wash};
-
 bool PetState_Idle::Update() {
-	switch (GetChoice(CHOICES)) {
-	case play:
-		Play();
-		return true;
-	case feed:
-		Feed();
-		break;
-	case wash:
-		Wash();
-		break;
-	default:
-		break;
-	}
+	_petDataPtr->UpdateStats();
 
-	return true;
+	Interact();
+
+	_petDataPtr->PrintStatus();
+
+	if (_petDataPtr->GetHealth() == Health::healthy) {
+		return true;
+	}
+	else
+		return false;
 }
 
 void PetState_Idle::Feed() {
-	_petDataPtr->ChangeStat(_petDataPtr->_food, 1);
-	_petDataPtr->ChangeStat(_petDataPtr->_bowels, 1);
+	_petDataPtr->Feed();
+
+	std::cout << _petDataPtr->GetName() << " munched on the food.\n";
 }
 
 void PetState_Idle::Wash() {
-
+	PetState_Default::Wash();
 }
 
 void PetState_Idle::Play() {
+	_petDataPtr->Play();
+}
 
+PetState* PetState_Idle::NextState() const{
+	if (_petDataPtr->GetHealth() == Health::sick) {
+		return new PetState_Sick();
+	}
+	else{
+		return new PetState_Dead();
+	}
+}
+
+SwitchType PetState_Idle::GetSwitchType() const {
+	return SwitchType::push;
 }

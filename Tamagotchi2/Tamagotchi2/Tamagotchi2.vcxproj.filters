@@ -13,6 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\FSM">
+      <UniqueIdentifier>{0242c4e2-f568-4626-8623-4b9a4ea2930c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FSM\Pet_PDA">
+      <UniqueIdentifier>{125ed9c6-a40b-4e5c-ba5f-db6440281eca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FSM\Pet_PDA\PetState">
+      <UniqueIdentifier>{fe7d8f4e-6c52-416d-85a9-8fc1521611ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FSM">
+      <UniqueIdentifier>{7588a4a0-f7e7-43db-b3d7-c4b097f74258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FSM\Pet_PDA">
+      <UniqueIdentifier>{7996fa77-b9f0-40dc-89c1-a4c28f4aa9e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FSM\Pet_PDA\PetState">
+      <UniqueIdentifier>{048ce3df-1274-4bf3-8b9b-41a70657139a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -21,22 +39,34 @@
     <ClCompile Include="PetGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PetState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Pet_PDA.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PDA_State.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\FSM\Pet_PDA\PetState</Filter>
     </ClCompile>
     <ClCompile Include="PetState_Idle.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\FSM\Pet_PDA\PetState</Filter>
+    </ClCompile>
+    <ClCompile Include="PetState_Sick.cpp">
+      <Filter>Source Files\FSM\Pet_PDA\PetState</Filter>
+    </ClCompile>
+    <ClCompile Include="PetState_Dead.cpp">
+      <Filter>Source Files\FSM\Pet_PDA\PetState</Filter>
+    </ClCompile>
+    <ClCompile Include="PetState_Default.cpp">
+      <Filter>Source Files\FSM\Pet_PDA\PetState</Filter>
+    </ClCompile>
+    <ClCompile Include="IState.cpp">
+      <Filter>Source Files\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="PDA_State.cpp">
+      <Filter>Source Files\FSM\Pet_PDA</Filter>
     </ClCompile>
     <ClCompile Include="PetData.cpp">
+      <Filter>Source Files\FSM\Pet_PDA</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMachine.cpp">
+      <Filter>Source Files\FSM\Pet_PDA</Filter>
+    </ClCompile>
+    <ClCompile Include="PetFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,22 +74,34 @@
     <ClInclude Include="PetGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PetState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Pet_PDA.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PDA_State.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\FSM\Pet_PDA\PetState</Filter>
     </ClInclude>
     <ClInclude Include="PetState_Idle.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\FSM\Pet_PDA\PetState</Filter>
+    </ClInclude>
+    <ClInclude Include="PetState_Sick.h">
+      <Filter>Header Files\FSM\Pet_PDA\PetState</Filter>
+    </ClInclude>
+    <ClInclude Include="PetState_Dead.h">
+      <Filter>Header Files\FSM\Pet_PDA\PetState</Filter>
+    </ClInclude>
+    <ClInclude Include="PetState_Default.h">
+      <Filter>Header Files\FSM\Pet_PDA\PetState</Filter>
+    </ClInclude>
+    <ClInclude Include="IState.h">
+      <Filter>Header Files\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="PDA_State.h">
+      <Filter>Header Files\FSM\Pet_PDA</Filter>
     </ClInclude>
     <ClInclude Include="PetData.h">
+      <Filter>Header Files\FSM\Pet_PDA</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>Header Files\FSM\Pet_PDA</Filter>
+    </ClInclude>
+    <ClInclude Include="PetFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
