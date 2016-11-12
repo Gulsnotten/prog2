@@ -2,9 +2,8 @@
 
 
 
-StateMachine::StateMachine(std::shared_ptr<PetData> pet_data)
+StateMachine::StateMachine(std::shared_ptr<PetData> pet_data) : _petDataPtr(pet_data), _currentStatePtr(nullptr)
 {
-	_petDataPtr = pet_data;
 	_petDataPtr->PrintStatus();
 	ChangeState(new PetState_Idle());
 }
@@ -16,32 +15,32 @@ StateMachine::~StateMachine()
 
 
 void StateMachine::ChangeState(PetState* state) {
-	current_state = std::shared_ptr<PetState>(state);
-	current_state->Enter(_petDataPtr);
+	_currentStatePtr = std::shared_ptr<PetState>(state);
+	_currentStatePtr->Enter(_petDataPtr);
 }
 
 void StateMachine::PushState(PetState* state) {
-	history.push_back(current_state);
+	history.push_back(_currentStatePtr);
 	ChangeState(state);
 }
 
 void StateMachine::PopState() {
-	current_state = history[history.size() - 1];
+	_currentStatePtr = history[history.size() - 1];
 	history.pop_back();
 }
 
 bool StateMachine::Update() {
-	bool ret = current_state->Update();
+	bool ret = _currentStatePtr->Update();
 
 	if (!ret) {
-		current_state->Exit();
+		_currentStatePtr->Exit();
 
-		switch (current_state->GetSwitchType()) {
+		switch (_currentStatePtr->GetSwitchType()) {
 		case SwitchType::switch_:
-			ChangeState(current_state->NextState());
+			ChangeState(_currentStatePtr->NextState());
 			break;
 		case SwitchType::push:
-			PushState(current_state->NextState());
+			PushState(_currentStatePtr->NextState());
 			break;
 		case SwitchType::pop:
 			PopState();

@@ -11,23 +11,21 @@ PetState_Idle::~PetState_Idle()
 }
 
 bool PetState_Idle::Update() {
+	if (_petDataPtr->GetHealth() != Health::healthy) {
+		return false;
+	}
+	
 	_petDataPtr->UpdateStats();
 
 	Interact();
 
 	_petDataPtr->PrintStatus();
 
-	if (_petDataPtr->GetHealth() == Health::healthy) {
-		return true;
-	}
-	else
-		return false;
+	return true;
 }
 
 void PetState_Idle::Feed() {
-	_petDataPtr->Feed();
-
-	std::cout << _petDataPtr->GetName() << " munched on the food.\n";
+	_petDataPtr->Feed(_foodFactory.CreateMeal());
 }
 
 void PetState_Idle::Wash() {

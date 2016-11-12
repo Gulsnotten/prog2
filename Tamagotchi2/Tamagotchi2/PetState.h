@@ -9,7 +9,7 @@
 class PetState : public PDA_State
 {
 protected:
-	std::shared_ptr<PetData> _petDataPtr = nullptr;
+	std::shared_ptr<PetData> _petDataPtr;
 
 	int GetChoice(const std::vector<std::string> choices) const;
 	int getInputInt(int min, int max) const;

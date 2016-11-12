@@ -1,0 +1,4 @@
+ctrl + . > enter
+	escape för att ta bort gula fältet
+
+ctrl + k > o

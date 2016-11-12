@@ -2,7 +2,7 @@
 
 
 
-PetState_Dead::PetState_Dead()
+PetState_Dead::PetState_Dead() : revive(false)
 {
 }
 
@@ -15,8 +15,6 @@ static const std::vector<std::string> CHOICES = { "...Poke it", "Buy new pet" };
 enum Action { poke, new_pet };
 
 bool PetState_Dead::Update() {
-	_petDataPtr->PrintStatus();
-
 	switch (GetChoice(CHOICES)) {
 	case poke:
 		if (Poke()) {
@@ -28,10 +26,11 @@ bool PetState_Dead::Update() {
 		break;
 	}
 
+	_petDataPtr->PrintStatus();
+
 	return true;
 }
 
-bool revive = false;
 bool PetState_Dead::Poke() { // returns true if Pet is revived!
 	revive = std::rand() % 100 == 0;
 	if (revive) {

@@ -7,8 +7,8 @@
 class StateMachine
 {
 	std::vector<std::shared_ptr<PetState>> history;
-	std::shared_ptr<PetData> _petDataPtr = nullptr;
-	std::shared_ptr<PetState> current_state = nullptr;
+	std::shared_ptr<PetData> _petDataPtr;
+	std::shared_ptr<PetState> _currentStatePtr;
 
 	void ChangeState(PetState* state);
 	void PushState(PetState* state);

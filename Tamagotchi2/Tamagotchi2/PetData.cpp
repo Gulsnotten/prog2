@@ -1,15 +1,20 @@
 #include "PetData.h"
 
 
+const int
+	PetData::_MAX_STAT = 5,
+	PetData::_FOOD_STEP = 3,
+	PetData::_BOWEL_STEP = 2,
+	PetData::_HAPPINESS_STEP = 3,
 
-PetData::PetData(std::string name)
+	PetData::_HEALTH_REGEN_HAPPY = _MAX_STAT,
+	PetData::_HEALTH_REGEN_UNCERTAIN = 3,
+	PetData::_HEALTH_REGEN_HATE = 1;
+
+
+PetData::PetData(std::string name) : _name(name), _food(_MAX_STAT), _health(_MAX_STAT),
+									_bowels(0), _poops(0), _happiness(_MAX_STAT / 2 + 1)
 {
-	_name = name;
-	_food = _MAX_STAT;
-	_health = _MAX_STAT;
-	_bowels = 0;
-	_poops = 0;
-	_happiness = _MAX_STAT / 2 + 1;
 }
 
 
@@ -29,9 +34,13 @@ void PetData::ChangeStat(int &stat, int change) {
 }
 
 
-void PetData::Feed() {
+void PetData::Feed(AbstractProduct* food) {
 	ChangeStat(_food, _FOOD_STEP);
 	ChangeStat(_bowels, _BOWEL_STEP);
+
+	food->Consume(this);
+
+	delete food;
 }
 void PetData::Play() {
 	ChangeStat(_happiness, _HAPPINESS_STEP);

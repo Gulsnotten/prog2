@@ -13,7 +13,12 @@ PetState_Sick::~PetState_Sick()
 
 
 void PetState_Sick::Feed() {
-	std::cout << _petDataPtr->GetName() << " won't eat...\n";
+	if (std::rand() % 2 == 0) {
+		std::cout << _petDataPtr->GetName() << " won't eat...\n";
+	}
+	else {
+		_petDataPtr->Feed(_foodFactory.CreateMeal());
+	}
 }
 void PetState_Sick::Wash() {
 	PetState_Default::Wash();

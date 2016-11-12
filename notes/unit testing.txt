@@ -1,0 +1,38 @@
+UNIT TESTING
+
+testing specific cases, not the entire program
+
+Test-Driven Development (TDD)
+	do unit testing before you implement something
+Good Unit Testing (GUT)
+
+Testing categories
+	Performance testing
+	Load testing
+	Scalability testing
+	Soak testing
+		long-run durability testing
+	Security testing
+	Concurrency testing
+		multi-threading
+	Stress testing
+		test the systems ability to fail and recover from fail
+
+
+UNIT TESTING EXAMPLE
+	// ex 1
+	bool StringToFloat(strm, &float);
+
+	void Test_StringToDouble(){
+		float val;
+		Assert(StringToFloat("-0.0", val));
+		UnitTest::TestEqual(0.0f, value, "Testing Negative Zero Result");
+	}
+
+	//ex 2
+	LinkedList<int> list;
+	list.push(10); etc...
+	// list 10, 2, 6, 4, 9, 1
+	UnitTest::TestEqual(10, list.front(), "Testing Front");
+	UnitTest::TestEqual(1, list.back(), "Testing Back");
+	UnitTest::TestEqual(6, list.At(2), "Testing At");

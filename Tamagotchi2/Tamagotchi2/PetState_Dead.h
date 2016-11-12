@@ -3,6 +3,7 @@
 class PetState_Dead : public PetState
 {
 	bool Poke();
+	bool revive;
 public:
 	PetState_Dead();
 	~PetState_Dead();

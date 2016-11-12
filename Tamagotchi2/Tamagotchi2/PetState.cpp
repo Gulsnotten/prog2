@@ -2,7 +2,7 @@
 
 
 
-PetState::PetState()
+PetState::PetState() : _petDataPtr(nullptr)
 {
 }
 

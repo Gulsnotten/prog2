@@ -31,6 +31,18 @@
     <Filter Include="Source Files\FSM\Pet_PDA\PetState">
       <UniqueIdentifier>{048ce3df-1274-4bf3-8b9b-41a70657139a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Factory">
+      <UniqueIdentifier>{369dcd00-b676-436b-b6fa-cdd4fe4a3962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Factory">
+      <UniqueIdentifier>{55d51739-b6a8-4033-ace3-6e761c03470a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Factory\Products">
+      <UniqueIdentifier>{ab0758d8-6382-4de9-aa92-fec3d7dd8f09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Factory\Products">
+      <UniqueIdentifier>{75df1cb7-e42e-4e69-bd47-71bad5c6051d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -69,6 +81,33 @@
     <ClCompile Include="PetFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AbstractFactory.cpp">
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Factory_SickFood.cpp">
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Factory_HealthyFood.cpp">
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Food_Jalapeno.cpp">
+      <Filter>Source Files\Factory\Products</Filter>
+    </ClCompile>
+    <ClCompile Include="Food_Pill.cpp">
+      <Filter>Source Files\Factory\Products</Filter>
+    </ClCompile>
+    <ClCompile Include="Food_Pizza.cpp">
+      <Filter>Source Files\Factory\Products</Filter>
+    </ClCompile>
+    <ClCompile Include="Food_Soup.cpp">
+      <Filter>Source Files\Factory\Products</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractProduct.cpp">
+      <Filter>Source Files\Factory\Products</Filter>
+    </ClCompile>
+    <ClCompile Include="PetInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PetGame.h">
@@ -102,6 +141,33 @@
       <Filter>Header Files\FSM\Pet_PDA</Filter>
     </ClInclude>
     <ClInclude Include="PetFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFactory.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory_HealthyFood.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory_SickFood.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Food_Jalapeno.h">
+      <Filter>Header Files\Factory\Products</Filter>
+    </ClInclude>
+    <ClInclude Include="Food_Pill.h">
+      <Filter>Header Files\Factory\Products</Filter>
+    </ClInclude>
+    <ClInclude Include="Food_Pizza.h">
+      <Filter>Header Files\Factory\Products</Filter>
+    </ClInclude>
+    <ClInclude Include="Food_Soup.h">
+      <Filter>Header Files\Factory\Products</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractProduct.h">
+      <Filter>Header Files\Factory\Products</Filter>
+    </ClInclude>
+    <ClInclude Include="PetInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
