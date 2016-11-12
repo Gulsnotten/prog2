@@ -105,8 +105,11 @@
     <ClCompile Include="AbstractProduct.cpp">
       <Filter>Source Files\Factory\Products</Filter>
     </ClCompile>
-    <ClCompile Include="PetInterface.cpp">
+    <ClCompile Include="Printable.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PetInterface.cpp">
+      <Filter>Source Files\FSM\Pet_PDA</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,8 +170,11 @@
     <ClInclude Include="AbstractProduct.h">
       <Filter>Header Files\Factory\Products</Filter>
     </ClInclude>
-    <ClInclude Include="PetInterface.h">
+    <ClInclude Include="Printable.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PetInterface.h">
+      <Filter>Header Files\FSM\Pet_PDA</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

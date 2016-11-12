@@ -8,6 +8,6 @@ public:
 	~Food_Jalapeno();
 
 	std::string GetDescription();
-	void Consume(PetData* petDataPtr);
+	void Consume(std::unique_ptr<PetData> &petDataPtr);
 };
 

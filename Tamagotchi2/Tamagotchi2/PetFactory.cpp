@@ -16,9 +16,7 @@ const std::vector<std::string> PetFactory::_NAMES = { "Agumon", "Gabumon", "Biyo
 StateMachine* PetFactory::CreatePet() {
 	std::string name = _NAMES[std::rand() % _NAMES.size()];
 
-	std::shared_ptr<PetData> pd = std::make_shared<PetData>(name);
-
-	StateMachine* ret = new StateMachine(pd);
+	StateMachine* ret = new StateMachine(new PetInterface(name));
 
 	return ret;
 }

@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include <memory>
 #include "PetData.h"
 #include <string>
 
@@ -17,6 +19,6 @@ public:
 	std::string GetName();
 	int GetFill();
 	virtual std::string GetDescription() = 0;
-	virtual void Consume(PetData* petDataPtr) = 0;
+	virtual void Consume(std::unique_ptr<PetData> &petDataPtr) = 0;
 };
 

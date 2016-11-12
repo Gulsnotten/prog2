@@ -2,9 +2,9 @@
 
 
 
-StateMachine::StateMachine(std::shared_ptr<PetData> pet_data) : _petDataPtr(pet_data), _currentStatePtr(nullptr)
+StateMachine::StateMachine(PetInterface* pet_interface) : _petInterfacePtr(pet_interface), _currentStatePtr(nullptr)
 {
-	_petDataPtr->PrintStatus();
+	_petInterfacePtr->PrintStatus();
 	ChangeState(new PetState_Idle());
 }
 
@@ -16,7 +16,7 @@ StateMachine::~StateMachine()
 
 void StateMachine::ChangeState(PetState* state) {
 	_currentStatePtr = std::shared_ptr<PetState>(state);
-	_currentStatePtr->Enter(_petDataPtr);
+	_currentStatePtr->Enter(_petInterfacePtr);
 }
 
 void StateMachine::PushState(PetState* state) {

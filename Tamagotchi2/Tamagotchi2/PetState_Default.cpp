@@ -31,19 +31,19 @@ void PetState_Default::Interact() {
 }
 
 void PetState_Default::Wash() {
-	_petDataPtr->Wash();
+	_petInterfacePtr->Wash();
 
 	std::string msg;
 
-	switch (_petDataPtr->GetMood()) {
+	switch (_petInterfacePtr->GetMood()) {
 	case Mood::happy:
-		msg = _petDataPtr->GetName() + " splashed around happily.\n";
+		msg = _petInterfacePtr->GetName() + " splashed around happily.\n";
 		break;
 	case Mood::uncertain:
-		msg = _petDataPtr->GetName() + " was washed.\n";
+		msg = _petInterfacePtr->GetName() + " was washed.\n";
 		break;
 	case Mood::hate:
-		msg = _petDataPtr->GetName() + " wriggled around violently. You didn't seem to clean it very well...\n";
+		msg = _petInterfacePtr->GetName() + " wriggled around violently. You didn't seem to clean it very well...\n";
 		break;
 	}
 

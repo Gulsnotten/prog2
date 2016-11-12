@@ -2,7 +2,7 @@
 
 
 
-PetState::PetState() : _petDataPtr(nullptr)
+PetState::PetState() : _petInterfacePtr(nullptr)
 {
 }
 
@@ -37,8 +37,8 @@ int PetState::getInputInt(int min, int max) const {
 	return result;
 }
 
-void PetState::Enter(std::shared_ptr<PetData> _ptr) {
-	_petDataPtr = _ptr;
+void PetState::Enter(std::shared_ptr<PetInterface> _ptr) {
+	_petInterfacePtr = _ptr;
 }
 
 SwitchType PetState::GetSwitchType() const {

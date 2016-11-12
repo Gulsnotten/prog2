@@ -26,7 +26,7 @@ bool PetState_Dead::Update() {
 		break;
 	}
 
-	_petDataPtr->PrintStatus();
+	_petInterfacePtr->PrintStatus();
 
 	return true;
 }
@@ -34,12 +34,23 @@ bool PetState_Dead::Update() {
 bool PetState_Dead::Poke() { // returns true if Pet is revived!
 	revive = std::rand() % 100 == 0;
 	if (revive) {
-		std::cout << "A divine light surrounds " << _petDataPtr->GetName() << ". Something is happening..!\n";
+		_petInterfacePtr->Revive();
+		PrintReviveMsg();
 	}
 	else {
-		std::cout << _petDataPtr->GetName() << " will probably never move again.\n";
+		PrintFutilePokeMsg();
 	}
 	return revive;
+}
+
+void PetState_Dead::PrintReviveMsg()
+{
+	PrintLn("A divine light surrounds " + _petInterfacePtr->GetName() + ". Something is happening..!");
+}
+
+void PetState_Dead::PrintFutilePokeMsg()
+{
+	PrintLn(_petInterfacePtr->GetName() + " will probably never move again.");
 }
 
 SwitchType PetState_Dead::GetSwitchType() const {

@@ -11,21 +11,21 @@ PetState_Idle::~PetState_Idle()
 }
 
 bool PetState_Idle::Update() {
-	if (_petDataPtr->GetHealth() != Health::healthy) {
+	if (_petInterfacePtr->GetHealth() != Health::healthy) {
 		return false;
 	}
 	
-	_petDataPtr->UpdateStats();
+	_petInterfacePtr->UpdateStats();
 
 	Interact();
 
-	_petDataPtr->PrintStatus();
+	_petInterfacePtr->PrintStatus();
 
 	return true;
 }
 
 void PetState_Idle::Feed() {
-	_petDataPtr->Feed(_foodFactory.CreateMeal());
+	_petInterfacePtr->Feed(std::unique_ptr<AbstractProduct>(_foodFactory.CreateMeal()));
 }
 
 void PetState_Idle::Wash() {
@@ -33,11 +33,11 @@ void PetState_Idle::Wash() {
 }
 
 void PetState_Idle::Play() {
-	_petDataPtr->Play();
+	_petInterfacePtr->Play();
 }
 
 PetState* PetState_Idle::NextState() const{
-	if (_petDataPtr->GetHealth() == Health::sick) {
+	if (_petInterfacePtr->GetHealth() == Health::sick) {
 		return new PetState_Sick();
 	}
 	else{

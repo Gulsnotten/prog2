@@ -20,7 +20,7 @@ std::string Food_Soup::GetDescription()
 	return "warms the belly on cold nights.";
 }
 
-void Food_Soup::Consume(PetData * petDataPtr)
+void Food_Soup::Consume(std::unique_ptr<PetData> &petDataPtr)
 {
-	AbstractProduct::Consume(petDataPtr);
+	// nada
 }

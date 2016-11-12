@@ -20,8 +20,7 @@ std::string Food_Pill::GetDescription()
 	return "\"Might help when sick.\"";
 }
 
-void Food_Pill::Consume(PetData * petDataPtr)
+void Food_Pill::Consume(std::unique_ptr<PetData> &petDataPtr)
 {
-	AbstractProduct::Consume(petDataPtr);
-	petDataPtr->ChangeStat(petDataPtr->_health, 1);
+	petDataPtr->ChangeHP(1);
 }

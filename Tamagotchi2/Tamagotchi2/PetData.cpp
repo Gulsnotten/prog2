@@ -1,22 +1,14 @@
 #include "PetData.h"
 
 
-const int
-	PetData::_MAX_STAT = 5,
-	PetData::_FOOD_STEP = 3,
-	PetData::_BOWEL_STEP = 2,
-	PetData::_HAPPINESS_STEP = 3,
-
-	PetData::_HEALTH_REGEN_HAPPY = _MAX_STAT,
-	PetData::_HEALTH_REGEN_UNCERTAIN = 3,
-	PetData::_HEALTH_REGEN_HATE = 1;
+const int PetData::_MAX_STAT = 5;
 
 
-PetData::PetData(std::string name) : _name(name), _food(_MAX_STAT), _health(_MAX_STAT),
+
+PetData::PetData(std::string name) : _name(name), _food(_MAX_STAT), _hp(_MAX_STAT),
 									_bowels(0), _poops(0), _happiness(_MAX_STAT / 2 + 1)
 {
 }
-
 
 PetData::~PetData()
 {
@@ -34,92 +26,64 @@ void PetData::ChangeStat(int &stat, int change) {
 }
 
 
-void PetData::Feed(AbstractProduct* food) {
-	ChangeStat(_food, _FOOD_STEP);
-	ChangeStat(_bowels, _BOWEL_STEP);
-
-	food->Consume(this);
-
-	delete food;
-}
-void PetData::Play() {
-	ChangeStat(_happiness, _HAPPINESS_STEP);
-}
-void PetData::Wash() {
-	switch (GetMood()) {
-	case Mood::happy:
-		ChangeStat(_health, _HEALTH_REGEN_HAPPY);
-		break;
-	case Mood::uncertain:
-		ChangeStat(_health, _HEALTH_REGEN_UNCERTAIN);
-		break;
-	case Mood::hate:
-		ChangeStat(_health, _HEALTH_REGEN_HATE);
-		break;
-	}
-	
-	_poops = 0;
+void PetData::ChangeFood(int change)
+{
+	ChangeStat(_food, change);
 }
 
-void PetData::PrintStatus() {
-	if (_poops > 0)
-		std::cout << "There is poop lying around. ";
-
-	switch (GetHealth()) {
-	case Health::healthy:
-		if (isHungry()) {
-			std::cout << _name << " looks hungry.\n";
-		}
-		else {
-			switch (GetMood()) {
-			case Mood::happy:
-				std::cout << _name << " looks energetic!\n";
-				break;
-			case Mood::uncertain:
-				std::cout << _name << " is looking at you.\n";
-				break;
-			case Mood::hate:
-				std::cout << _name << " is growling...\n";
-				break;
-			}
-		}
-		break;
-	case Health::sick:
-		if (isHungry()) {
-			std::cout << _name << " seems to be in serious pain...\n";
-		}
-		else{
-			std::cout << _name << " is sick.\n";
-		}
-		break;
-	case Health::dead:
-		std::cout << _name << " is not breathing.\n";
-		break;
-	}
+void PetData::ChangeHP(int change)
+{
+	ChangeStat(_hp, change);
 }
 
-void PetData::UpdateStats() {
-	ChangeStat(_food, -1);
-	if (_bowels == _MAX_STAT) {
-		ChangeStat(_poops, 1);
-		_bowels = 0;
-	}
-	if (_poops > 0) {
-		_health -= _poops;
-	}
-	ChangeStat(_happiness, -1);
+void PetData::ChangeBowels(int change)
+{
+	ChangeStat(_bowels, change);
 }
+
+void PetData::ChangePoops(int change)
+{
+	ChangeStat(_poops, change);
+}
+
+void PetData::ChangeHappiness(int change)
+{
+	ChangeStat(_happiness, change);
+}
+
+int PetData::GetFood()
+{
+	return _food;
+}
+int PetData::GetHP()
+{
+	return _hp;
+}
+int PetData::GetBowels()
+{
+	return _bowels;
+}
+int PetData::GetPoops()
+{
+	return _poops;
+}
+int PetData::GetHappiness()
+{
+	return _happiness;
+}
+
 
 Health PetData::GetHealth() {
-	if (_health <= 0 || _food <= 0) {
+	if (_hp <= 0 || _food <= 0) {
 		return Health::dead;
 	}
-	else if (_health >= 3) {
+	else if (_hp >= 3) {
 		return Health::healthy;
 	}
 	else
 		return Health::sick;
 }
+
 bool PetData::isHungry() {
 	return _food <= 2;
 }

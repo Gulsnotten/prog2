@@ -28,8 +28,6 @@ std::string AbstractProduct::GetDescription()
 	return std::string();
 }
 
-void AbstractProduct::Consume(PetData * petDataPtr)
+void AbstractProduct::Consume(std::unique_ptr<PetData> &petDataPtr)
 {
-	std::cout << petDataPtr->GetName() << " munched on the " << _name << ".\n";
-	petDataPtr->ChangeStat(petDataPtr->_food, _fill);
 }

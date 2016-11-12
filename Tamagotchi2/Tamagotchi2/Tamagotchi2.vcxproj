@@ -162,6 +162,7 @@
     <ClCompile Include="PetState_Default.cpp" />
     <ClCompile Include="PetState_Idle.cpp" />
     <ClCompile Include="PetState_Sick.cpp" />
+    <ClCompile Include="Printable.cpp" />
     <ClCompile Include="StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +185,7 @@
     <ClInclude Include="PetState_Default.h" />
     <ClInclude Include="PetState_Idle.h" />
     <ClInclude Include="PetState_Sick.h" />
+    <ClInclude Include="Printable.h" />
     <ClInclude Include="StateMachine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -19,7 +19,7 @@ std::string Food_Pizza::GetDescription()
 	return "not very healthy, but very tasty.";
 }
 
-void Food_Pizza::Consume(PetData * petDataPtr)
+void Food_Pizza::Consume(std::unique_ptr<PetData> &petDataPtr)
 {
-	AbstractProduct::Consume(petDataPtr);
+	//nada
 }

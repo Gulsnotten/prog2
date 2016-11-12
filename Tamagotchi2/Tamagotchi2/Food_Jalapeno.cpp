@@ -20,8 +20,7 @@ std::string Food_Jalapeno::GetDescription()
 	return "will mess with your bowels.";
 }
 
-void Food_Jalapeno::Consume(PetData * petDataPtr)
+void Food_Jalapeno::Consume(std::unique_ptr<PetData> &petDataPtr)
 {
-	AbstractProduct::Consume(petDataPtr);
-	petDataPtr->ChangeStat(petDataPtr->_bowels, PetData::_MAX_STAT);
+	petDataPtr->ChangeBowels(PetData::_MAX_STAT);
 }
