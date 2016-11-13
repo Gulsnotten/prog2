@@ -7,7 +7,7 @@ public:
 	Printable();
 	~Printable();
 
-	void Print(std::string out);
-	void PrintLn(std::string out);
+	void Print(std::string out) const;
+	void PrintLn(std::string out) const;
 };
 

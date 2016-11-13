@@ -2,7 +2,7 @@
 
 
 
-PetState_Sick::PetState_Sick()
+PetState_Sick::PetState_Sick() : PetState_Default(new Factory_SickFood())
 {
 }
 
@@ -12,20 +12,35 @@ PetState_Sick::~PetState_Sick()
 }
 
 
-void PetState_Sick::Feed() {
+void PetState_Sick::PrintWontEatMsg()
+{
+	PrintLn(_petInterfacePtr->GetName() + " won't eat...");
+}
+
+void PetState_Sick::PrintWashMsg()
+{
+	PrintLn(_petInterfacePtr->GetName() + " looks relieved.");
+}
+
+void PetState_Sick::PrintPlayMsg()
+{
+	PrintLn(_petInterfacePtr->GetName() + " can barely move.");
+}
+
+void PetState_Sick::Feed(Action action) {
 	if (std::rand() % 2 == 0) {
-		std::cout << _petInterfacePtr->GetName() << " won't eat...\n";
+		PrintWontEatMsg();
 	}
 	else {
-		_petInterfacePtr->Feed(std::unique_ptr<AbstractProduct>(_foodFactory.CreateMeal()));
+		DoFeed(action);
 	}
 }
 void PetState_Sick::Wash() {
 	PetState_Default::Wash();
-	std::cout << _petInterfacePtr->GetName() << " looks relieved.\n";
+	PrintWashMsg();
 }
 void PetState_Sick::Play() {
-	std::cout << _petInterfacePtr->GetName() << " can barely move.\n";
+	PrintPlayMsg();
 }
 
 bool PetState_Sick::Update() {

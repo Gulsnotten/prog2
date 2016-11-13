@@ -14,9 +14,10 @@ PetState::~PetState()
 
 int PetState::GetChoice(const std::vector<std::string> choices) const {
 	int index = 0;
-	std::cout << "(write the number of your choice)\n";
+	PrintLn("(write the number of your choice)");
 	for (auto c : choices) {
-		std::cout << ++index << " : " << c << "\n";
+		index++;
+		PrintLn(std::to_string(index) + " : " + c);
 	}
 
 	return getInputInt(1, choices.size()) - 1;

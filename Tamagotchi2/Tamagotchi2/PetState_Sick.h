@@ -5,8 +5,11 @@
 class PetState_Sick : public PetState_Default
 {
 	Factory_SickFood _foodFactory;
+	void PrintWontEatMsg();
+	void PrintWashMsg();
+	void PrintPlayMsg();
 protected:
-	void Feed();
+	void Feed(Action action);
 	void Wash();
 	void Play();
 public:

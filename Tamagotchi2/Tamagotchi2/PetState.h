@@ -4,9 +4,9 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include <iostream>
+#include "Printable.h"
 
-class PetState : public PDA_State
+class PetState : public PDA_State, public Printable
 {
 protected:
 	std::shared_ptr<PetInterface> _petInterfacePtr;

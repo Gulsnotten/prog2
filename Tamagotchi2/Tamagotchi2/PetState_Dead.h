@@ -1,7 +1,6 @@
 #pragma once
-#include "Printable.h"
 #include "PetState.h"
-class PetState_Dead : public PetState, public Printable
+class PetState_Dead : public PetState
 {
 	bool Poke();
 	bool revive;

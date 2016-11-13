@@ -1,7 +1,7 @@
 #include "PetState_Idle.h"
 
 
-PetState_Idle::PetState_Idle()
+PetState_Idle::PetState_Idle() : PetState_Default(new Factory_HealthyFood())
 {
 }
 
@@ -24,8 +24,8 @@ bool PetState_Idle::Update() {
 	return true;
 }
 
-void PetState_Idle::Feed() {
-	_petInterfacePtr->Feed(std::unique_ptr<AbstractProduct>(_foodFactory.CreateMeal()));
+void PetState_Idle::Feed(Action action) {
+	DoFeed(action);
 }
 
 void PetState_Idle::Wash() {

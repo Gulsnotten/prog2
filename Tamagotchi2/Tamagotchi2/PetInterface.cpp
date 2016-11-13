@@ -14,7 +14,7 @@ const int
 
 void PetInterface::PrintFoodMsg(std::unique_ptr<AbstractProduct>& food)
 {
-	PrintLn(_petDataPtr->GetName() + " munched on the " + food->GetName());
+	PrintLn(_petDataPtr->GetName() + " munched on the " + food->GetName() + " (" + food->GetDescription() + ")");
 }
 
 void PetInterface::PrintPlayMsg()

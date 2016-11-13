@@ -4,6 +4,7 @@
 enum Mood { hate, uncertain, happy };
 enum Health { healthy, sick, dead};
 
+// var access interface
 class PetData
 {
 	std::string _name;

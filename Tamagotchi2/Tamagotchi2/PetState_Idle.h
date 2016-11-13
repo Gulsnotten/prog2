@@ -7,7 +7,7 @@ class PetState_Idle : public PetState_Default
 {
 	Factory_HealthyFood _foodFactory;
 protected:
-	void Feed();
+	void Feed(Action action);
 	void Wash();
 	void Play();
 public:
