@@ -1,4 +1,5 @@
 #include "LinkedList.h"
+#include "BinarySearchTree.h"
 #include "UnitTest.h"
 #include <string>
 
@@ -41,7 +42,39 @@ int main() {
 	list.clear();
 	list.print();
 
+
+
+
 	std::cout << "\nTesting binary search tree...\n";
+
+	BinarySearchTree<int> bst;
+
+	bst.insert(5);
+	bst.insert(2);
+	bst.insert(6);
+	bst.insert(3);
+	bst.insert(9);
+	bst.insert(4);
+	bst.insert(10);
+	bst.insert(1);
+	bst.insert(7);
+	bst.insert(8);
+
+	bst.remove(4);
+	bst.remove(7);
+	bst.remove(2);
+
+	UnitTest::TestEqual<bool>(bst.find(4), false, "remove node with 0 children");
+	UnitTest::TestEqual<bool>(bst.find(7), false, "remove node with 1 child");
+	UnitTest::TestEqual<bool>(bst.find(2), false, "remove node with 2 children");
+
+	bst.traversal_in_order();
+	bst.traversal_pre_order();
+	bst.traversal_post_order();
+
+	std::cout << "find(6) = " << bst.find(6) << "\n";
+	std::cout << "find(11) = " << bst.find(11) << "\n";
+	std::cout << "size = " << bst.size() << "\n";
 
 	return 0;
 }
