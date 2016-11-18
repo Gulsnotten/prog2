@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractFactory.cpp" />
     <ClCompile Include="AbstractProduct.cpp" />
+    <ClCompile Include="DayNightCycle.cpp" />
     <ClCompile Include="Factory_HealthyFood.cpp" />
     <ClCompile Include="Factory_SickFood.cpp" />
     <ClCompile Include="Food_Jalapeno.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="PetState_Default.cpp" />
     <ClCompile Include="PetState_Idle.cpp" />
     <ClCompile Include="PetState_Sick.cpp" />
+    <ClCompile Include="PetState_Sleep.cpp" />
     <ClCompile Include="Printable.cpp" />
     <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="Subject.cpp" />
@@ -170,6 +172,7 @@
   <ItemGroup>
     <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="AbstractProduct.h" />
+    <ClInclude Include="DayNightCycle.h" />
     <ClInclude Include="Factory_HealthyFood.h" />
     <ClInclude Include="Factory_SickFood.h" />
     <ClInclude Include="Food_Jalapeno.h" />
@@ -188,6 +191,7 @@
     <ClInclude Include="PetState_Default.h" />
     <ClInclude Include="PetState_Idle.h" />
     <ClInclude Include="PetState_Sick.h" />
+    <ClInclude Include="PetState_Sleep.h" />
     <ClInclude Include="Printable.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="Subject.h" />

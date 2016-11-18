@@ -2,10 +2,13 @@
 
 
 
-StateMachine::StateMachine(PetInterface* pet_interface) : _petInterfacePtr(pet_interface), _currentStatePtr(nullptr)
+StateMachine::StateMachine(PetInterface* pet_interface) : _petInterfacePtr(pet_interface), _currentStatePtr(nullptr), _sleepStatePtr(new PetState_Sleep())
 {
 	_petInterfacePtr->PrintStatus();
 	ChangeState(new PetState_Idle());
+
+	_switchPtr = _currentStatePtr;
+	_sleepStatePtr->Enter(_petInterfacePtr);
 }
 
 
@@ -30,7 +33,7 @@ void StateMachine::PopState() {
 }
 
 bool StateMachine::Update() {
-	bool ret = _currentStatePtr->Update();
+	bool ret = _switchPtr._Get()->Update();
 
 	if (!ret) {
 		_currentStatePtr->Exit();
@@ -50,7 +53,22 @@ bool StateMachine::Update() {
 		default:
 			break;
 		}
+
+		_switchPtr = _currentStatePtr;
 	}
 
 	return true;
+}
+
+void StateMachine::Notify(Subject * subject)
+{
+	
+	DayNightCycle* dnc = static_cast<DayNightCycle*>(subject);
+
+	if (dnc->GetTime() == TimeState::day) {
+		_switchPtr = _currentStatePtr;
+	}
+	else {
+		_switchPtr = _sleepStatePtr;
+	}
 }

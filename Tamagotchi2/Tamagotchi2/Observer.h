@@ -1,8 +1,14 @@
 #pragma once
+#include "Subject.h"
+
+class Subject;
+
 class Observer
 {
-public:
+protected:
 	Observer();
-	~Observer();
+public:
+	virtual ~Observer();
+	virtual void Notify(Subject* subject) = 0;
 };
 

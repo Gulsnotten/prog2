@@ -123,6 +123,12 @@
     <ClCompile Include="Subject.cpp">
       <Filter>Source Files\Observer</Filter>
     </ClCompile>
+    <ClCompile Include="PetState_Sleep.cpp">
+      <Filter>Source Files\FSM\Pet_PDA\PetState</Filter>
+    </ClCompile>
+    <ClCompile Include="DayNightCycle.cpp">
+      <Filter>Source Files\Observer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PetGame.h">
@@ -192,6 +198,12 @@
       <Filter>Header Files\Observer</Filter>
     </ClInclude>
     <ClInclude Include="Subject.h">
+      <Filter>Header Files\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="PetState_Sleep.h">
+      <Filter>Header Files\FSM\Pet_PDA\PetState</Filter>
+    </ClInclude>
+    <ClInclude Include="DayNightCycle.h">
       <Filter>Header Files\Observer</Filter>
     </ClInclude>
   </ItemGroup>
