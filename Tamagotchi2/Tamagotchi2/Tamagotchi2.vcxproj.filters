@@ -43,6 +43,12 @@
     <Filter Include="Header Files\Factory\Products">
       <UniqueIdentifier>{75df1cb7-e42e-4e69-bd47-71bad5c6051d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Observer">
+      <UniqueIdentifier>{add7a1e0-f223-4add-91f1-bb7ac6276373}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Observer">
+      <UniqueIdentifier>{1fa11620-4ee3-48b0-bc59-c9c2e0be3151}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -111,6 +117,12 @@
     <ClCompile Include="PetInterface.cpp">
       <Filter>Source Files\FSM\Pet_PDA</Filter>
     </ClCompile>
+    <ClCompile Include="Observer.cpp">
+      <Filter>Source Files\Observer</Filter>
+    </ClCompile>
+    <ClCompile Include="Subject.cpp">
+      <Filter>Source Files\Observer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PetGame.h">
@@ -175,6 +187,12 @@
     </ClInclude>
     <ClInclude Include="PetInterface.h">
       <Filter>Header Files\FSM\Pet_PDA</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Header Files\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.h">
+      <Filter>Header Files\Observer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

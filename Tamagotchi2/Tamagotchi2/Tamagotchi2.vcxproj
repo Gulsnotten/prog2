@@ -152,6 +152,7 @@
     <ClCompile Include="Food_Soup.cpp" />
     <ClCompile Include="IState.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Observer.cpp" />
     <ClCompile Include="PDA_State.cpp" />
     <ClCompile Include="PetData.cpp" />
     <ClCompile Include="PetFactory.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="PetState_Sick.cpp" />
     <ClCompile Include="Printable.cpp" />
     <ClCompile Include="StateMachine.cpp" />
+    <ClCompile Include="Subject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractFactory.h" />
@@ -175,6 +177,7 @@
     <ClInclude Include="Food_Pizza.h" />
     <ClInclude Include="Food_Soup.h" />
     <ClInclude Include="IState.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="PDA_State.h" />
     <ClInclude Include="PetData.h" />
     <ClInclude Include="PetFactory.h" />
@@ -187,6 +190,7 @@
     <ClInclude Include="PetState_Sick.h" />
     <ClInclude Include="Printable.h" />
     <ClInclude Include="StateMachine.h" />
+    <ClInclude Include="Subject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
