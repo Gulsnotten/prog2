@@ -9,5 +9,7 @@ public:
 	PDA_State();
 	~PDA_State();
 
+	virtual void Enter();
+
 	virtual SwitchType GetSwitchType() const;
 };

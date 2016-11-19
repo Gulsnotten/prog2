@@ -38,8 +38,17 @@ int PetState::getInputInt(int min, int max) const {
 	return result;
 }
 
+bool PetState::Update()
+{
+	return false;
+}
+
 void PetState::Enter(std::shared_ptr<PetInterface> _ptr) {
 	_petInterfacePtr = _ptr;
+}
+
+void PetState::Exit()
+{
 }
 
 SwitchType PetState::GetSwitchType() const {

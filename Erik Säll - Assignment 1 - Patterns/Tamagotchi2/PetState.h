@@ -17,7 +17,9 @@ public:
 	PetState();
 	~PetState();
 
-	void Enter(std::shared_ptr<PetInterface> _ptr);
+	virtual bool Update();
+	virtual void Enter(std::shared_ptr<PetInterface> _ptr);
+	virtual void Exit();
 	SwitchType GetSwitchType() const;
 
 	PetState* NextState() const;
