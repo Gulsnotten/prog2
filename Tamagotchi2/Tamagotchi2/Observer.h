@@ -9,6 +9,6 @@ protected:
 	Observer();
 public:
 	virtual ~Observer();
-	virtual void Notify(Subject* subject) = 0;
+	virtual void Notify(const Subject* subject) = 0;
 };
 

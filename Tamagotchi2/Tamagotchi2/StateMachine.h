@@ -24,6 +24,6 @@ public:
 	~StateMachine();
 
 	bool Update();
-	void Notify(Subject* subject);
+	void Notify(const Subject* subject);
 };
 

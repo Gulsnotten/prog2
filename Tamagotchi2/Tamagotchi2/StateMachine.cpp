@@ -60,10 +60,10 @@ bool StateMachine::Update() {
 	return true;
 }
 
-void StateMachine::Notify(Subject * subject)
+void StateMachine::Notify(const Subject * subject)
 {
 	
-	DayNightCycle* dnc = static_cast<DayNightCycle*>(subject);
+	const DayNightCycle* dnc = static_cast<const DayNightCycle*>(subject);
 
 	if (dnc->GetTime() == TimeState::day) {
 		_switchPtr = _currentStatePtr;
